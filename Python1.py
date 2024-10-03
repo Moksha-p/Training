@@ -159,3 +159,49 @@ def find_subsets(s):
         return subsets
 s = {1,2,3}
 print(find_subsets(s))
+
+# 15. Write a Python function to generate the Fibonacci series up to a given number of terms.
+print('Write a Python function to generate the Fibonacci series up to a given number of terms.')
+def fibonacci(n):
+    fib_series = [0, 1]
+    while len(fib_series) < n:
+        fib_series.append(fib_series[-1] + fib_series[-2])
+        return fib_series
+n = 10
+print(fibonacci(n))
+
+# 16. Write a Python program to find the longest increasing subsequence in a given list of numbers.
+print('Write a Python program to find the longest increasing subsequence in a given list of numbers.')
+def longest_increasing_subsequence(nums):
+    if not nums:
+        return []
+    
+    lis = [1] * len(nums)
+    for i in range(1, len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                lis[i] = max(lis[i], lis[j] + 1)
+    
+    max_len = max(lis)
+    result = []
+    for i in range(len(nums) - 1, -1, -1):
+        if lis[i] == max_len:
+            result.append(nums[i])
+            max_len -= 1
+    
+    return result[::-1]
+
+nums = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+print(longest_increasing_subsequence(nums))
+
+# 17. Write a Python program to find the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.
+print('Write a Python program to find the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.')
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+        return a
+a = 48
+b = 18
+print(gcd(a, b))
+
+# 18. Write a Python program to implement a basic version of the Collatz conjecture.
