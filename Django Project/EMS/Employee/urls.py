@@ -1,18 +1,39 @@
 from django.urls import path
 from .views import (
-    EmployeeListCreateView, EmployeeDetailView, EmployeeDepartmentView,
-    DepartmentListCreateView, DepartmentDetailView,
-    ProjectListCreateView, ProjectDetailView
+    EmployeeCreateView, EmployeeListView, EmployeeUpdateView, EmployeeDeleteView, EmployeeDepartmentView, EmployeeDetailView,
+    DepartmentCreateView, DepartmentListView, DepartmentUpdateView, DepartmentDetailView, DepartmentDeleteView, DepartmentTotalSalaryView,
+    ProjectListView, ProjectCreateView, ProjectDetailView, ProjectDeleteView, ProjectAddMemberView, ProjectBudgetView, ProjectUpdateStatusView, NewProjectsView, OngoingProjectsView, EndedProjectsView, HighestSalaryEmployeeView, SecondHighestSalaryEmployeeView,    
 )    
 
 urlpatterns = [
-    path('Employee/', EmployeeListCreateView.as_view(), name='employee-list-create'),
-    path('Employee/<int:pk>/', EmployeeDetailView.as_view(), name='employee-detail'),
-    path('Employee/<int:pk>/department/', EmployeeDepartmentView.as_view(), name='employee-department'),
 
-    path('departments/', DepartmentListCreateView.as_view(), name='department-list-create'),
-    path('departments/<int:pk>/', DepartmentDetailView.as_view(), name='department-detail'),
+    # Employee APIs
+    path('employee/create/', EmployeeCreateView.as_view()),
+    path('employee/', EmployeeListView.as_view()),
+    path('employee/<int:id>/', EmployeeDetailView.as_view()), 
+    path('employee/<int:id>/update/', EmployeeUpdateView.as_view()),
+    path('employee/<int:id>/delete/', EmployeeDeleteView.as_view()),
+    path('employee/<int:id>/department/', EmployeeDepartmentView.as_view()),
 
-    path('projects/', ProjectListCreateView.as_view(), name='project-list-create'),
-    path('projects/<int:pk>/', ProjectDetailView.as_view(), name='project-detail'),
+    # Department APIs
+    path('department/', DepartmentListView.as_view()),
+    path('department/create/', DepartmentCreateView.as_view()),
+    path('department/<int:id>/', DepartmentDetailView.as_view()),
+    path('department/<int:id>/update/', DepartmentUpdateView.as_view()),
+    path('department/<int:id>/delete/', DepartmentDeleteView.as_view()),
+
+    # Project APIs
+    path('project/', ProjectListView.as_view()),
+    path('project/create/', ProjectCreateView.as_view()),
+    path('project/<int:id>/', ProjectDetailView.as_view()),
+    path('project/<int:id>/delete/', ProjectDeleteView.as_view()),
+    path('project/<int:id>/update-status/', ProjectUpdateStatusView.as_view()),
+    path('project/<int:id>/add-member/', ProjectAddMemberView.as_view()),
+    path('project/<int:id>/budget/', ProjectBudgetView.as_view()),
+    path('employee/highest-salary/', HighestSalaryEmployeeView.as_view()),
+    path('employee/second-highest-salary/', SecondHighestSalaryEmployeeView.as_view()),
+    path('department/total-salary/', DepartmentTotalSalaryView.as_view()),
+    path('project/status-new/', NewProjectsView.as_view()),
+    path('project/status-on-going/', OngoingProjectsView.as_view()),
+    path('project/status-ended/', EndedProjectsView.as_view()),
 ]
