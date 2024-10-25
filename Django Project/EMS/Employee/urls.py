@@ -18,7 +18,7 @@ urlpatterns = [
     # Department APIs
     path('department/', DepartmentListView.as_view()),
     path('department/create/', DepartmentCreateView.as_view()),
-    path('department/<int:id>/', DepartmentDetailView.as_view()),
+    path('department/<int:id>/department-with-employee/', DepartmentDetailView.as_view()),
     path('department/<int:id>/update/', DepartmentUpdateView.as_view()),
     path('department/<int:id>/delete/', DepartmentDeleteView.as_view()),
 

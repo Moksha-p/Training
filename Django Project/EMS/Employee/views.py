@@ -87,7 +87,7 @@ class DepartmentUpdateView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# GET /department/<id>/        - Get department data along with all employees
+# GET /department/<id>/department-with-employee        - Get department data along with all employees
 class DepartmentDetailView(APIView):
     def get(self, request, id):
         department = get_object_or_404(Department, id=id)
