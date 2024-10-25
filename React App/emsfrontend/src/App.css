@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 20px;
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color:white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #333;
+  font: Times New Roman;
+}
+table {
+  width: 100%;
+  border: #333;
+  border-width: 2px;
+  margin-top: 20px;
+}
+th, td {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}
+.employee-details {
+  color: #555;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 15px;
+  }
+
+  table, th, td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  /* Stack items vertically on mobile */
+  th, td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  th, td {
+    text-align: left;
+  }
+}
+
+/* Loading Styles */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  flex-direction: column;
+}
+.loadingGif {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 20px;
+}
+
+.loadingText {
+  font-size: 20px;
+  color: #121845;
+}
+
+/* For small screens */
+@media (max-width: 576px) {
+
+  .loadingGif {
+    width: 50px;
+    height: 50px;
+  }
+
+  .loadingText {
+    font-size: 16px;
+  }
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f4f4f9;
+  padding: 10px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: blueviolet;
+}
