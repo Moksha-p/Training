@@ -1,0 +1,12 @@
+.category-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-buttons .btn {
+  margin-bottom: 10px;
+}
